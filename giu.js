@@ -45,12 +45,22 @@ Array.prototype.creaIndice=function(campo) {
     return result.sort();
 }
 
+
+function escribeCheckbox(id, valores) {
+    let div=document.getElementById(id);
+    let html="";
+    valores.forEach( function(valor) {
+        html+=`<input type="checkbox" name="${id}" value="${valor}" id="${id}_${valor}">
+        <label for="${id}_${valor}">${valor}</label><br>`;
+    });
+    div.innerHTML=html;
+}
 /**
  * Función principal
  */
 function main() {
-    let st=resources
-            .selectPorCampo("formatos", ["pdf"],  )
-            .selectPorCampo( "asignaturas", ["Fundamentos de Programación"]);
-    console.log(st);
+    let tags=resources.creaIndice("tags");
+    let asignaturas=resources.creaIndice("asignaturas");
+    let formatos=resources.creaIndice("formatos");
+    escribeCheckbox("tags", tags);
 }
