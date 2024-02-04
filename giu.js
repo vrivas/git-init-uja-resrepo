@@ -61,6 +61,9 @@ function escribeCheckbox(divId, valores) {
     div.innerHTML=html;
 }
 
+/**
+ * Asigna eventos a los checkboxes para filtrar los recursos
+ */
 function asignaEventosCheckbox() {
     let cb=document.querySelectorAll("input[type=checkbox]");
     cb.forEach( function(checkbox) {
@@ -76,11 +79,32 @@ function asignaEventosCheckbox() {
                 result=result.selectPorCampo(campo, valor);
             });
             
-            console.log(result);
+            mostrarRecursos(result);
         });
     });
 }
 
+
+/**
+ * Muestra los recursos, cada uno en un div
+ * @param {Vector de recursos} recursos 
+ */
+function mostrarRecursos(recursos) {
+    let div=document.getElementById("recursos");
+    let html="";
+    recursos.forEach( function(resource) {
+        html+=`
+            <div class="recurso">
+                <h3><a href="${resource.url}" target="_blank">${resource.titulo}</a></h3>
+                <p>${resource.url}</p>
+                <p>Tags: ${resource.tags.join(", ")}</p>
+                <p>Asignaturas: ${resource.asignaturas.join(", ")}</p>
+                <p>Formatos: ${resource.formatos.join(", ")}</p>
+            </div>
+        `;
+    });
+    div.innerHTML=html;
+}
 /**
  * Función principal
  */

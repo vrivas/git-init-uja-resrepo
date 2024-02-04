@@ -8,3 +8,12 @@
     border: 1px solid #00f;
     margin-left: 25%;
 }
+
+
+.recurso {
+    display: block;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px solid #f00;
+    background-color: #fdd;
+}
