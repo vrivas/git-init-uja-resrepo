@@ -46,21 +46,47 @@ Array.prototype.creaIndice=function(campo) {
 }
 
 
-function escribeCheckbox(id, valores) {
-    let div=document.getElementById(id);
+/**
+ * Muestra todos los elementos de un índice como checboxes
+ * @param {String} divId Div en el que se van a mostrar los checkboxes 
+ * @param {Vector de cadenas} valores Conjunto de valores que se van a mostrar
+ */
+function escribeCheckbox(divId, valores) {
+    let div=document.getElementById(divId);
     let html="";
     valores.forEach( function(valor) {
-        html+=`<input type="checkbox" name="${id}" value="${valor}" id="${id}_${valor}">
-        <label for="${id}_${valor}">${valor}</label><br>`;
+        html+=`<input type="checkbox" name="cb" value="${divId}_${valor}" id="${divId}_${valor}">
+        <label for="${divId}_${valor}">${valor}</label><br>`;
     });
     div.innerHTML=html;
 }
+
+function asignaEventosCheckbox() {
+    let cb=document.querySelectorAll("input[type=checkbox]");
+    cb.forEach( function(checkbox) {
+        checkbox.addEventListener("change", function(event) {
+            let tmpSelec = Array.from(cb).filter( function(checkbox) {
+                return checkbox.checked;
+            }).map( function(checkbox) {
+                return checkbox.value;
+            });
+            let result=tmpSelec.length?resources.filter(e=>true):[]
+            tmpSelec.forEach( function(selec) {
+                let [campo, valor] = selec.split("_");
+                result=result.selectPorCampo(campo, valor);
+            });
+            
+            console.log(result);
+        });
+    });
+}
+
 /**
  * Función principal
  */
 function main() {
-    let tags=resources.creaIndice("tags");
-    let asignaturas=resources.creaIndice("asignaturas");
-    let formatos=resources.creaIndice("formatos");
-    escribeCheckbox("tags", tags);
+    escribeCheckbox("tags", resources.creaIndice("tags"));
+    escribeCheckbox("asignaturas", resources.creaIndice("asignaturas"));
+    escribeCheckbox("formatos", resources.creaIndice("formatos"));
+    asignaEventosCheckbox();
 }

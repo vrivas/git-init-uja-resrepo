@@ -10,7 +10,7 @@ var resources = [
         titulo: "T2",
         url: "http://www.ejemplo.com",
         tags: ["ramas", "local", "remoto"],
-        asignaturas: ["Desarrollo Ágil", "Vídeo"],
+        asignaturas: ["Desarrollo Ágil"],
         formatos: ["pdf"],
         campo: ["valor"],
     },
