@@ -105,10 +105,19 @@ function mostrarRecursos(recursos) {
     });
     div.innerHTML=html;
 }
+
+function corrigeRecursos() {
+    resources.forEach( function(resource) {
+        if( resource.formatos ) resource.formatos=resource.formatos.sort().filter((e,i,v)=>v[i]!=v[i+1]) 
+        if( resource.tags ) resource.tags=resource.tags.sort().filter((e,i,v)=>v[i]!=v[i+1]) 
+        if( resource.asignaturas ) resource.asignaturas=resource.asignaturas.sort().filter((e,i,v)=>v[i]!=v[i+1]) 
+    });
+}
 /**
  * Función principal
  */
 function main() {
+    corrigeRecursos();
     escribeCheckbox("tags", resources.creaIndice("tags"));
     escribeCheckbox("asignaturas", resources.creaIndice("asignaturas"));
     escribeCheckbox("formatos", resources.creaIndice("formatos"));
