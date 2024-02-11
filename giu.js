@@ -78,8 +78,8 @@ function asignaEventosCheckbox() {
                 let [campo, valor] = selec.split("_");
                 result=result.selectPorCampo(campo, valor);
             });
-            
             mostrarRecursos(result);
+            setFiltrosEnURL(setFiltrosPorCheckbox());
         });
     });
 }
@@ -118,7 +118,10 @@ function eliminaCriteriosBusquedaDuplicados() {
     });
 }
 
-
+/**
+ * Obtiene los parámetros de location.search y los convierte en un objeto
+ * @returns Objeto con los parámetros de location.search
+ */
 function getFiltrosPorParametro() {
     let filtros = {};
     let url = new URL(window.location.href);
@@ -156,6 +159,33 @@ function aplicarFiltros(filtros) {
     });
 
     mostrarRecursos(result);
+}
+
+function setFiltrosPorCheckbox() {
+    let cb = document.querySelectorAll("input[type=checkbox]");
+    let filtros = {};
+    cb.forEach((checkbox) => {
+        let [campo, valor] = checkbox.value.split("_");
+        if (checkbox.checked) {
+            if (filtros[campo]) {
+                filtros[campo].push(valor);
+            } else {
+                filtros[campo] = [valor];
+            }
+        }
+    });
+    return filtros;
+}
+
+function setFiltrosEnURL(filtros) {
+    let url = new URL(window.location.href);
+    let searchParams = new URLSearchParams(url.search);
+    for (let key in filtros) {
+        searchParams.set(key, filtros[key].join(","));
+    }
+    url.search = searchParams.toString();
+    //window.history.pushState({}, '', url);
+    console.log("URL", url);
 }
 /**
  * Función principal
