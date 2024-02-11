@@ -107,9 +107,10 @@ function mostrarRecursos(recursos) {
 }
 
 /**
- * Corrige los recursos para que no haya valores repetidos en los campos de tags, asignaturas y formatos.
+ * Elimina los criterios de búsqueda duplicados para que no haya valores repetidos 
+ * en los vectores de tags, asignaturas y formatos.
  */
-function corrigeRecursos() {
+function eliminaCriteriosBusquedaDuplicados() {
     resources.forEach( function(resource) {
         if( resource.formatos ) resource.formatos=resource.formatos.sort().filter((e,i,v)=>v[i]!=v[i+1]) 
         if( resource.tags ) resource.tags=resource.tags.sort().filter((e,i,v)=>v[i]!=v[i+1]) 
@@ -120,7 +121,7 @@ function corrigeRecursos() {
  * Función principal
  */
 function main() {
-    corrigeRecursos();
+    eliminaCriteriosBusquedaDuplicados();
     escribeCheckbox("tags", resources.creaIndice("tags"));
     escribeCheckbox("asignaturas", resources.creaIndice("asignaturas"));
     escribeCheckbox("formatos", resources.creaIndice("formatos"));
