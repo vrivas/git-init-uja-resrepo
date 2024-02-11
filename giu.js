@@ -79,7 +79,7 @@ function asignaEventosCheckbox() {
                 result=result.selectPorCampo(campo, valor);
             });
             mostrarRecursos(result);
-            setFiltrosEnURL(setFiltrosPorCheckbox());
+            mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));
         });
     });
 }
@@ -161,6 +161,10 @@ function aplicarFiltros(filtros) {
     mostrarRecursos(result);
 }
 
+/**
+ * Crea un objeto con los filtros seleccionados en los checkboxes
+ * @returns Vector con los filtros seleccionados
+ */
 function setFiltrosPorCheckbox() {
     let cb = document.querySelectorAll("input[type=checkbox]");
     let filtros = {};
@@ -177,6 +181,11 @@ function setFiltrosPorCheckbox() {
     return filtros;
 }
 
+/**
+ * Crea una URL con los filtros de búsqueda
+ * @param {Objeto con los filtros de búsqueda} filtros 
+ * @returns 
+ */
 function setFiltrosEnURL(filtros) {
     let url = new URL(window.location.href);
     let searchParams = new URLSearchParams(url.search);
@@ -186,6 +195,16 @@ function setFiltrosEnURL(filtros) {
     url.search = searchParams.toString();
     //window.history.pushState({}, '', url);
     console.log("URL", url);
+    return url;
+}
+
+/**
+ * Escribe la URL generada a partir de los filtros de los recursos
+ * @param {URL generada a partir de los filtros de los recursos} url 
+ */
+function mostrarURLGeneradaPorFiltros(url) {
+    let div = document.getElementById("url-generada");
+    div.innerHTML = `<a href="${url}">${url}</a>`;
 }
 /**
  * Función principal
@@ -198,4 +217,6 @@ function main() {
     let filtros = getFiltrosPorParametro();
     aplicarFiltros(filtros);
     asignaEventosCheckbox();
+    mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));
+
 }
