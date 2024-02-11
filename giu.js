@@ -106,6 +106,9 @@ function mostrarRecursos(recursos) {
     div.innerHTML=html;
 }
 
+/**
+ * Corrige los recursos para que no haya valores repetidos en los campos de tags, asignaturas y formatos.
+ */
 function corrigeRecursos() {
     resources.forEach( function(resource) {
         if( resource.formatos ) resource.formatos=resource.formatos.sort().filter((e,i,v)=>v[i]!=v[i+1]) 
