@@ -88,8 +88,9 @@ function asignaEventosCheckbox() {
 function mostrarMensajeNoSeEncontraronRecursos(recursos) {
     let div=document.getElementById("recursos");
     let html=`
-        <div class="recurso">
-            <h3>No ha marcado filtros de búsqueda o no se encontraron recursos para los filtros marcados.</h3>
+        <div class="mensaje-error">
+            <h3>No se encontraron recursos.</h3>
+            <p>No ha marcado filtros de búsqueda o no se encontraron recursos para los filtros marcados.</p>
         </div>
     `;
     div.innerHTML=html;
