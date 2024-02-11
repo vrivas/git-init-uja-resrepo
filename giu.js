@@ -85,11 +85,24 @@ function asignaEventosCheckbox() {
 }
 
 
+function mostrarMensajeNoSeEncontraronRecursos(recursos) {
+    let div=document.getElementById("recursos");
+    let html=`
+        <div class="recurso">
+            <h3>No ha marcado filtros de búsqueda o no se encontraron recursos para los filtros marcados.</h3>
+        </div>
+    `;
+    div.innerHTML=html;
+}
 /**
  * Muestra los recursos, cada uno en un div
  * @param {Vector de recursos} recursos 
  */
 function mostrarRecursos(recursos) {
+    if( recursos.length==0 ) {
+        mostrarMensajeNoSeEncontraronRecursos();
+        return;
+    }
     let div=document.getElementById("recursos");
     let html="";
     recursos.forEach( function(resource) {
@@ -103,6 +116,13 @@ function mostrarRecursos(recursos) {
             </div>
         `;
     });
+    if( recursos.length==0 ) {
+        html+=`
+            <div class="recurso">
+                <h3>No se encontraron recursos que cumplan los criterios de búsqueda</h3>
+            </div>
+        `;
+    }
     div.innerHTML=html;
 }
 
