@@ -117,6 +117,46 @@ function eliminaCriteriosBusquedaDuplicados() {
         if( resource.asignaturas ) resource.asignaturas=resource.asignaturas.sort().filter((e,i,v)=>v[i]!=v[i+1]) 
     });
 }
+
+
+function getFiltrosPorParametro() {
+    let filtros = {};
+    let url = new URL(window.location.href);
+    let searchParams = new URLSearchParams(url.search);
+    searchParams.forEach((value, key) => {
+        if (key != "q") {
+            filtros[key] = value.split(",").map((e) => e.trim());
+        }
+    });
+    console.log("Filtros", filtros);
+    return filtros;
+}
+
+/**
+ * Aplica los filtros leidos en la llamada a la URL a los correspondientes checkboxes
+ * @param {Objeto} filtros 
+ */
+function aplicarFiltros(filtros) {
+    let cb = document.querySelectorAll("input[type=checkbox]");
+    cb.forEach((checkbox) => {
+        let [campo, valor] = checkbox.value.split("_");
+        if (filtros[campo] && filtros[campo].includes(valor)) {
+            checkbox.checked = true;
+        }
+    });
+    let tmpSelec = Array.from(cb).filter((checkbox) => {
+        return checkbox.checked;
+    }).map((checkbox) => {
+        return checkbox.value;
+    });
+    let result = tmpSelec.length ? resources.filter(e => true) : []
+    tmpSelec.forEach((selec) => {
+        let [campo, valor] = selec.split("_");
+        result = result.selectPorCampo(campo, valor);
+    });
+
+    mostrarRecursos(result);
+}
 /**
  * Función principal
  */
@@ -125,5 +165,7 @@ function main() {
     escribeCheckbox("tags", resources.creaIndice("tags"));
     escribeCheckbox("asignaturas", resources.creaIndice("asignaturas"));
     escribeCheckbox("formatos", resources.creaIndice("formatos"));
+    let filtros = getFiltrosPorParametro();
+    aplicarFiltros(filtros);
     asignaEventosCheckbox();
 }
