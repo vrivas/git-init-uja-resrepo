@@ -1,0 +1,27 @@
+#sidebar{
+    width: 20em;
+    border: 0px solid #000;
+    padding-left: 1em;
+}
+
+#main {
+    border: 0px solid #00f;
+    margin-left: 20em;
+}
+
+
+.recurso {
+    display: block;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px solid rgb(31, 13, 187);
+    background-color: rgba(193, 193, 247,0.5);
+}
+
+.mensaje-error {
+    display: block;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px solid #f00;
+    background-color: #fdd;
+}
