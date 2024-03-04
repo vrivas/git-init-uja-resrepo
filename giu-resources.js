@@ -6,6 +6,7 @@ var resources = [
         tags: ["init", "clone","ramas", "local", "remoto"],
         asignaturas: ["Desarrollo Ágil", "Desarrollo Ágil"],
         formatos: ["pdf"],
+        nivel: ["básico", "medio", "avanzado"]  // elegir solo uno
     },
     */
     {
@@ -14,13 +15,15 @@ var resources = [
         tags: ["init"],
         asignaturas: [],
         formatos: ["web"],
+        nivel: ["básico"], 
     },
     {
         titulo: "Conociendo Git y creando mi primer Repositorio Local.",
         url: "https://es.linkedin.com/pulse/conociendo-git-y-creando-mi-primer-repositorio-local-alarc%C3%B3n-acurero",
         tags: ["init", "local"],
         asignaturas: [],
-        formatos: ["web"]
+        formatos: ["web"],
+        nivel: ["básico"],
     },
     {
         titulo: "Navengando por el Terminal Git Bash.",
@@ -28,6 +31,7 @@ var resources = [
         tags: ["init"],
         asignaturas: ["Sistemas Operativos"],
         formatos: ["web"],
+        nivel: ["básico"],
     },    
     {
         titulo: "Buenas prácticas al trabajar con Git.",
@@ -35,13 +39,15 @@ var resources = [
         tags: ["ramas"],
         asignaturas: [],
         formatos: ["web"],
+        nivel: ["medio"],
     },
     {
         titulo: "Trabajar con ramas en Git",
         url: "https://desarrolloweb.com/articulos/trabajar-ramas-git.html",
-        tags: ["ramas","Remoto"],
+        tags: ["ramas","remoto"],
         asignaturas: [],
         formatos: ["web"],
+        nivel: ["básico"],
     },
     
 ]
