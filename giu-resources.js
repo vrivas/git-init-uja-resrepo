@@ -26,7 +26,7 @@ var resources = [
         nivel: ["básico"],
     },
     {
-        titulo: "Navengando por el Terminal Git Bash.",
+        titulo: "Navegando por el Terminal Git Bash.",
         url: "https://es.linkedin.com/pulse/navengando-por-el-terminal-git-bash-para-alarc%C3%B3n-acurero?trk=public_profile_article_view",
         tags: ["init"],
         asignaturas: ["Sistemas Operativos"],
