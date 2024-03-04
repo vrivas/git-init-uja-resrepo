@@ -1,19 +1,19 @@
 var resources = [
+    /*
     {
         titulo: "Plantilla",
         url: "http://www.ejemplo.com",
         tags: ["init", "clone","ramas", "local", "remoto"],
         asignaturas: ["Desarrollo Ágil", "Desarrollo Ágil"],
         formatos: ["pdf"],
-        campo: ["valor"],
     },
+    */
     {
         titulo: "Cómo instalar GIT en Windows, MacOS y Linux.",
         url: "https://www.hostinger.es/tutoriales/instalar-git-en-distintos-sistemas-operativos",
         tags: ["init"],
         asignaturas: [],
         formatos: ["web"],
-        campo: ["valor"],
     },
     {
         titulo: "Conociendo Git y creando mi primer Repositorio Local.",
@@ -28,7 +28,6 @@ var resources = [
         tags: ["init"],
         asignaturas: ["Sistemas Operativos"],
         formatos: ["web"],
-        campo: ["valor"],
     },    
     {
         titulo: "Buenas prácticas al trabajar con Git.",
@@ -36,7 +35,6 @@ var resources = [
         tags: ["ramas"],
         asignaturas: [],
         formatos: ["web"],
-        campo: ["valor"],
     },
     {
         titulo: "Trabajar con ramas en Git",
@@ -44,15 +42,6 @@ var resources = [
         tags: ["ramas","Remoto"],
         asignaturas: [],
         formatos: ["web"],
-        campo: ["valor"],
-    },
-    {
-        titulo: "Plantilla",
-        url: "http://www.ejemplo.com",
-        tags: ["init", "clone","ramas", "local", "remoto"],
-        asignaturas: ["Desarrollo Ágil", "Desarrollo Ágil"],
-        formatos: ["pdf"],
-        campo: ["valor"],
     },
     
 ]
