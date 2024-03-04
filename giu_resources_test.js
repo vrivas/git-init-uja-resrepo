@@ -1,5 +1,5 @@
 // fichero de recursos de prueba
-var resources = [
+var resources_test = [
     {
         titulo: "T1",
         url: "http://www.ejemplo.com",
