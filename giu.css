@@ -2,16 +2,17 @@ menu {
     width: 20em;
     border: 0px solid #000;
     float: left;
-    width: 10%;
-    max-width: 10%;
+    width: 15%;
+    max-width: 15%;
     margin: 0px;
+    padding: 0px
 }
 
 main {
     border: 0px solid #00f;
     float: left;
-    width: 85%;
-    max-width: 85%;
+    width: 80%;
+    max-width: 80%;
     margin: 0px;
     margin-left: 1%;
 }
@@ -41,4 +42,13 @@ header {
     padding: 1em;
     border: 1px solid #f00;
     background-color: #fdd;
+}
+
+menu h4 {
+    margin-bottom: 0px;
+}
+
+menu article {
+    margin: 0px;
+    padding: 0px;
 }
