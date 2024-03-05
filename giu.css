@@ -4,10 +4,30 @@
   font-weight: 400;
   font-style: normal;
 }
-.logo {
-    vertical-align: middle;
-    width: 3em;
+header {
+    border: 0px solid #0f0;
+    display: grid;
+    column-gap: 1em;
+    column-count: 20;
 }
+
+.logo {
+    width: 5em;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 0em 2em 0em 0em;
+    margin: 0em 0em 0em 0em;
+    border-right: 2px solid #f05133;
+    display: inline-block;
+
+}
+header h1 {
+    grid-column-start: 2;
+    grid-column-end: 20;
+    vertical-align: middle;
+    margin: auto 0em auto 0em ;
+}
+
 menu {
     width: 20em;
     border: 0px solid #000;
@@ -38,9 +58,6 @@ footer {
     border: 0px solid #f00;
 }
 
-header {
-    border: 0px solid #0f0;
-}
 
 
 
@@ -69,4 +86,6 @@ menu article {
     padding: 0em 0em 0em 0em;
 }
 
-
+rojo {
+    color: #f05133;
+}
