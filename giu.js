@@ -112,19 +112,26 @@ function mostrarRecursos(objetoRecursos) {
     let div = document.getElementById("recursos");
     let html = "";
     objetoRecursos.recursos.forEach(function (resource) {
-        html += `
-            <div class="recurso">
-                <h3><a href="${resource.url}" target="_blank">${resource.titulo}</a></h3>
-                <p>${resource.url}</p>
-                <p>Tags: ${resource.tags.join(", ")}</p>
-                <p>Asignaturas: ${resource.asignaturas.join(", ")}</p>
-                <p>Formatos: ${resource.formatos.join(", ")}</p>
-            </div>
-        `;
+        html += recurso2html(resource);
     });
     div.innerHTML = html;
 }
 
+/**
+ * Convierte un recurso en un article con formato HTML
+ * @param {Objeto} resource Recurso a convertir en HTML
+ */
+function recurso2html(resource) {
+    return `
+            <article class="recurso">
+                <h3><a href="${resource.url}" target="_blank">${resource.titulo}</a></h3>
+                <p class="recurso-url">${resource.url}</p>
+                <p>Tags: ${resource.tags.join(", ")}</p>
+                <p>Asignaturas: ${resource.asignaturas.join(", ")}</p>
+                <p>Formatos: ${resource.formatos.join(", ")}</p>
+            </article>
+        `;
+}
 /**
  * Elimina los criterios de búsqueda duplicados para que no haya valores repetidos 
  * en los vectores de tags, asignaturas y formatos.
