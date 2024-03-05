@@ -4,19 +4,23 @@
   font-weight: 400;
   font-style: normal;
 }
+.logo {
+    vertical-align: middle;
+    width: 3em;
+}
 menu {
     width: 20em;
     border: 0px solid #000;
     float: left;
     width: 15%;
     max-width: 15%;
-    margin: 0px;
+    margin: .3em 0 0 0;
     padding: 0px;
 }
 
 
 menu article div {
-    font-size: .8em;
+    font-size: .9em;
 }
 main {
     border: 0px solid #00f;
@@ -55,10 +59,12 @@ header {
 }
 
 menu h4 {
-    margin-bottom: 0px;
+    margin: 0em 0em 0em 0em;
 }
 
 menu article {
-    margin: 0px;
-    padding: 0px;
+    margin: 0.3em 0em 0em 0em;
+    padding: 0em 0em 0em 0em;
 }
+
+
