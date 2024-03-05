@@ -2,13 +2,17 @@
 <html>
 
 <head>
-    <title>Home</title>
+    <title>Repositorio de Recursos: Git-Init-UJA</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="giu.css">
 </head>
 
 <body>
-    <div class="w3-sidebar w3-bar-block" id="sidebar">
+    <header>
+        <h1>Repositorio de Recursos: Git-Init-UJA</h1>
+        <p>Este es un repositorio de recursos para la docencia en la Universidad de Jaén. Los recursos están organizados por asignaturas, tags y formatos. Puedes seleccionar los recursos que te interesen y generar una URL para compartirlos.</p>
+    </header>
+    <menu id="sidebar">
         <div id="indice-tags">
             <h4>Tags</h4>
             <div id="tags"></div>
@@ -21,15 +25,16 @@
             <h4>Formatos</h4>
             <div id="formatos"></div>
         </div>
-    </div>
-    <div class="w3-main" id="main">
-        <div id="contenido">
+    </menu>
+    <main id="main">
             <h1>Recursos seleccionados</h1>
-            <div id="url-generada"></div>
-            <div id="recursos"></div>
-        </div>
-    </div>
+            <section id="url-generada"></section>
+            <section id="recursos"></section>
+    </main>
 
+    <footer>
+        <p>Este es un proyecto de la Universidad de Jaén.</p>
+    </footer>
     <script src="giu-resources.js"></script>
     <script src="giu-resources_test.js"></script><script>joinResourcesTest()</script>
     <script src="giu.js"></script>
