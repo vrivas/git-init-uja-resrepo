@@ -64,10 +64,12 @@ footer {
 .recurso {
     display: block;
     float: left;
-    margin-bottom: 1em;
-    padding: 1em;
-    border: 1px solid rgb(31, 13, 187);
-    background-color: rgba(193, 193, 247,0.5);
+    margin: .3em;
+    padding: .6em;
+    border: 1px solid rgba(0,0,0,0.3);
+    background-color: white;
+    box-shadow: 0.3em 0.3em  rgba(0,0,0,0.3);
+    border-radius: 0.3em;
 }
 
 .mensaje-error {
