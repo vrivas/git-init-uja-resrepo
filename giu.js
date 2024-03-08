@@ -130,7 +130,6 @@ function recurso2html(resource, num) {
                 <h3><a href="${resource.url}" target="_blank">${resource.titulo}</a></h3>
                 <p class="recurso-url">${resource.url}</p>
                 <p>Tags: ${resource.tags.join(", ")}</p>
-                <p>Asignaturas: ${resource.asignaturas.join(", ")}</p>
                 <p>Formatos: ${resource.formatos.join(", ")}</p>
             </article>
         `;
@@ -143,7 +142,7 @@ function eliminaCriteriosBusquedaDuplicados() {
     resources.forEach(function (resource) {
         if (resource.formatos) resource.formatos = resource.formatos.sort().filter((e, i, v) => v[i] != v[i + 1])
         if (resource.tags) resource.tags = resource.tags.sort().filter((e, i, v) => v[i] != v[i + 1])
-        if (resource.asignaturas) resource.asignaturas = resource.asignaturas.sort().filter((e, i, v) => v[i] != v[i + 1])
+        //if (resource.asignaturas) resource.asignaturas = resource.asignaturas.sort().filter((e, i, v) => v[i] != v[i + 1])
     });
 }
 
@@ -245,7 +244,7 @@ function mostrarURLGeneradaPorFiltros(url) {
 function main() {
     eliminaCriteriosBusquedaDuplicados();
     escribeCheckbox("tags", resources.creaIndice("tags"));
-    escribeCheckbox("asignaturas", resources.creaIndice("asignaturas"));
+    //escribeCheckbox("asignaturas", resources.creaIndice("asignaturas"));
     escribeCheckbox("formatos", resources.creaIndice("formatos"));
     let filtros = getFiltrosPorParametro();
     aplicarFiltros(filtros);
