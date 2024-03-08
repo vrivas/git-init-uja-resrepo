@@ -111,8 +111,8 @@ function mostrarRecursos(objetoRecursos) {
     titulo.innerHTML = objetoRecursos.titulo+` (${objetoRecursos.recursos.length})`;
     let div = document.getElementById("recursos");
     let html = "";
-    objetoRecursos.recursos.forEach(function (resource) {
-        html += recurso2html(resource);
+    objetoRecursos.recursos.forEach(function (resource,i) {
+        html += recurso2html(resource,i+1);
     });
     div.innerHTML = html;
 }
@@ -120,10 +120,13 @@ function mostrarRecursos(objetoRecursos) {
 /**
  * Convierte un recurso en un article con formato HTML
  * @param {Objeto} resource Recurso a convertir en HTML
+ * @param {Number} num Número de recurso en orden de aparición
+ * @returns Recurso convertido en HTML
  */
-function recurso2html(resource) {
+function recurso2html(resource, num) {
     return `
             <article class="recurso">
+                <div class="contenedor-recurso-num"><p class="recurso-num">${num}</p></div>
                 <h3><a href="${resource.url}" target="_blank">${resource.titulo}</a></h3>
                 <p class="recurso-url">${resource.url}</p>
                 <p>Tags: ${resource.tags.join(", ")}</p>
