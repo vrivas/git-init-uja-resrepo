@@ -49,3 +49,9 @@ var resources_test = [
     },
     
 ]
+
+
+// Une los ficheros de recursos de prueba con los recursos
+function joinResourcesTest() {
+    resources_test.forEach(e=>resources.push(e)) 
+}
