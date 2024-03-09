@@ -10,7 +10,7 @@ var resources = [
     },
     */
     {
-        titulo: "¿Cómo instalar GIT en Windows, MacOS y Linux?",
+        titulo: "Cómo instalar GIT en Windows, MacOS y Linux.",
         url: "https://www.hostinger.es/tutoriales/instalar-git-en-distintos-sistemas-operativos",
         tags: ["init"],
         asignaturas: [],
@@ -18,7 +18,7 @@ var resources = [
         nivel: ["básico"], 
     },
     {
-        titulo: "Conociendo Git y creando mi primer Repositorio Local.",
+        titulo: "Conociendo Git y creando mi primer repositorio local.",
         url: "https://es.linkedin.com/pulse/conociendo-git-y-creando-mi-primer-repositorio-local-alarc%C3%B3n-acurero",
         tags: ["init", "local"],
         asignaturas: [],
@@ -50,7 +50,7 @@ var resources = [
         nivel: ["básico"],
     },
     {
-        titulo: "¿Cómo fusionar ramas con git merge y resolución de conflictos?",
+        titulo: "Cómo fusionar ramas con git merge y resolver conflictos.",
         url: "https://www.atlassian.com/es/git/tutorials/using-branches/git-merge",
         tags: ["ramas","local"],
         asignaturas: [],
@@ -58,7 +58,7 @@ var resources = [
         nivel: ["medio"],
     },
     {
-        titulo: "¿Cómo actualizar un repositorio local y remoto con git push y git pull?",
+        titulo: "Cómo actualizar un repositorio local y remoto con git push y git pull.",
         url: "https://leninner.medium.com/gu%C3%ADa-sencilla-para-trabajar-con-git-push-y-git-pull-785e0bca60cc",
         tags: ["local","remoto"],
         asignaturas: [],
@@ -66,7 +66,7 @@ var resources = [
         nivel: ["medio"],
     },
     {
-        titulo: "¿Para qué sirven las etiquetas (tags) en git?",
+        titulo: "¿Para qué sirven las etiquetas(tags) en git?",
         url: "https://www.youtube.com/watch?v=ywzdb2brvt8",
         tags: ["local","remoto"],
         asignaturas: [],
@@ -92,7 +92,7 @@ var resources = [
     {
         titulo: "¿Cómo exluir archivos del control de versiones? (.gitignore)",
         url: "https://www.youtube.com/watch?v=w44lFiaiAiw",
-        tags: ["local, remoto"],
+        tags: ["local","remoto"],
         asignaturas: [],
         formatos: ["video"],
         nivel: ["medio"],
