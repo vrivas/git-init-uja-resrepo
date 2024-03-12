@@ -174,11 +174,14 @@ Estilos para mostrar cada uno de los recursos
 }
 
 .listado-chips-tags {
-    border: 1px solid var(--fondo-chip-tag);
+    border-right: 1px solid var(--fondo-chip-tag);
+    border-left: 1px solid var(--fondo-chip-tag);
+
 }
 
 .listado-chips-formatos {
-    border: 1px solid var(--fondo-chip-formato);
+    border-right: 1px solid var(--fondo-chip-formato);
+    border-left: 1px solid var(--fondo-chip-formato);
 }
 
 .chip-formato,
