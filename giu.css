@@ -8,6 +8,8 @@
     --nivel-avanzado-claro: rgba(225, 44, 44, 0.2);
 
     --fondo-gris-oscuro: rgba(180, 180, 180, 1);
+    --fondo-chip-tag: green;
+    --fondo-chip-formato: blue;
 }
 * {
     font-family: "Red Hat Display", sans-serif;
@@ -147,19 +149,51 @@ Estilos para mostrar cada uno de los recursos
     border: 1px solid var( --nivel-avanzado-oscuro );
 }
 
-.formato,
-.tag {
+/* Estilos para las chips de tags, formatos, etc... */
+.listados-chips {
+    display: inline-block;
+    margin: 0em 0em 0em 0em;
+    padding: 0em 0em 0em 0em;
+    text-align: center;
+    clear: both;
+}
+.listado-chips-label {
+    font-size: 0.7em;
+    width: fit-content;
+    font-weight: bold;
+    margin: -1em 0em 0em 0em;
+    padding-right: 0.2em;
+    background-color: white;
+}
+.listado-chips-formatos,
+.listado-chips-tags {
+    border-radius: 0.2em;
+    padding: .3em;
+    float: left;
+    margin: 0.3em;
+}
+
+.listado-chips-tags {
+    border: 1px solid var(--fondo-chip-tag);
+}
+
+.listado-chips-formatos {
+    border: 1px solid var(--fondo-chip-formato);
+}
+
+.chip-formato,
+.chip-tag {
     border-bottom-left-radius: .3em;
     font-size: 80%;
     padding: 0em .3em 0em .3em;
     color: white;
 }
 
-.formato {
+.chip-formato {
     background-color: blue;
 }
 
-.tag {
+.chip-tag {
     background-color: green;
 }
 .mensaje-error {
