@@ -125,8 +125,9 @@ function mostrarRecursos(objetoRecursos) {
  */
 function recurso2html(resource, num) {
     return `
-            <article class="recurso">
+            <article class="recurso recurso-nivel-${resource.nivel}">
                 <div class="contenedor-recurso-num"><p class="recurso-num">${num}</p></div>
+                <div class="recurso-nivel">${resource.nivel}</div>
                 <h3><a href="${resource.url}" target="_blank">${resource.titulo}</a></h3>
                 <p class="recurso-url">${resource.url}</p>
                 <p>Tags: ${resource.tags.join(", ")}</p>
