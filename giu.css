@@ -6,6 +6,8 @@
     --nivel-medio-claro: rgba(241, 144, 26, 0.2);
     --nivel-avanzado-oscuro: rgba(225, 44, 44, 1);
     --nivel-avanzado-claro: rgba(225, 44, 44, 0.2);
+
+    --fondo-gris-oscuro: rgba(180, 180, 180, 1);
 }
 * {
     font-family: "Red Hat Display", sans-serif;
@@ -18,7 +20,6 @@ body {
 }
 
 header {
-    border: 0px solid #0f0;
     display: grid;
     column-gap: 1em;
     column-count: 20;
@@ -46,7 +47,6 @@ header h1 {
 
 menu {
     width: 20em;
-    border: 0px solid #000;
     float: left;
     width: 15%;
     max-width: 15%;
@@ -64,7 +64,6 @@ menu article div {
 }
 
 main {
-    border: 0px solid #00f;
     float: left;
     width: 80%;
     max-width: 80%;
@@ -74,7 +73,7 @@ main {
 
 footer {
     clear: both;
-    border: 0px solid #f00;
+    text-align: center;
 }
 
 
@@ -87,9 +86,7 @@ Estilos para mostrar cada uno de los recursos
     float: left;
     margin: 1em;
     padding: .6em;
-    border: 1px solid rgb(180, 180, 180);
     background-color: white;
-    box-shadow: 0.3em 0.3em rgb(180, 180, 180);
     border-radius: 0.4em;
     font-size: smaller;
 }
@@ -97,12 +94,11 @@ Estilos para mostrar cada uno de los recursos
 .recurso-num {
     text-align: center;
     font-weight: bold;
-    color: rgba(255, 255, 255, 1);
+    color: black;
     margin: -1.1em 0em 0em 1em;
     background-color: inherit;
     width: 3em;
-    border: 1px solid rgb(180, 180, 180);
-    background-color: rgb(180, 180, 180);
+    background-color: white;
     border-radius: 0.4em;
     padding: 0.2em 0em 0em 0em;
 }
@@ -177,10 +173,11 @@ Estilos para mostrar cada uno de los recursos
 
 menu h4 {
     margin: 1em 0em 0em 0em;
-    border: 1px solid rgb(180, 180, 180);
-    background-color: rgb(180, 180, 180);
+    border: 1px solid var(--fondo-gris-oscuro);
+    background-color: var(--fondo-gris-oscuro);
     border-radius: 0.4em;
     padding: 0.1em;
+    font-variant: small-caps;
 
 }
 
