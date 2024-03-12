@@ -158,12 +158,13 @@ Estilos para mostrar cada uno de los recursos
     clear: both;
 }
 .listado-chips-label {
-    font-size: 0.7em;
+    font-size: 0.6em;
     width: fit-content;
     font-weight: bold;
     margin: -1em 0em 0em 0em;
     padding-right: 0.2em;
     background-color: white;
+    font-variant: small-caps;
 }
 .listado-chips-formatos,
 .listado-chips-tags {
