@@ -121,34 +121,34 @@ Estilos para mostrar cada uno de los recursos
     color: var( --nivel-básico-oscuro );
 }
 .recurso-nivel-básico {
-    box-shadow: 0.3em 0.3em rgba(8, 117, 8, 0.2);
+    box-shadow: 0.3em 0.3em var( --nivel-básico-claro );
 }
 .recurso-nivel-básico, 
 .recurso-nivel-básico .recurso-num {
-    border: 1px solid rgba(8, 117, 8, 1);
+    border: 1px solid var( --nivel-básico-oscuro );
 }
 /* Recursos de nivel medio */
 .recurso-nivel-medio .recurso-nivel {
-    color: rgb(241, 144, 26);
+    color: var( --nivel-medio-oscuro );
 }
 .recurso-nivel-medio {
-    box-shadow: 0.3em 0.3em rgba(241, 144, 26, 0.2);
+    box-shadow: 0.3em 0.3em var( --nivel-medio-claro );
 }
 .recurso-nivel-medio,
 .recurso-nivel-medio .recurso-num {
-    border: 1px solid rgba(241, 144, 26, 1);
+    border: 1px solid var( --nivel-medio-oscuro );
 }
 
 /* Recursos de nivel avanzado */
 .recurso-nivel-avanzado .recurso-nivel {
-    color: rgb(225, 44, 44);
+    color: var( --nivel-avanzado-oscuro );
 }
 .recurso-nivel-avanzado {
-    box-shadow: 0.3em 0.3em rgba(225, 44, 44, 0.2); 
+    box-shadow: 0.3em 0.3em var( --nivel-avanzado-claro ); 
 }
 .recurso-nivel-avanzado, 
 .recurso-nivel-avanzado .recurso-num {
-    border: 1px solid rgba(225, 44, 44, 1);
+    border: 1px solid var( --nivel-avanzado-oscuro );
 }
 
 .formato,
