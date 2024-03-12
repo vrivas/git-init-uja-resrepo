@@ -85,6 +85,7 @@ function asignaEventosCheckbox() {
                 let [campo, valor] = selec.split("_");
                 result.recursos = result.recursos.selectPorCampo(campo, valor);
             });
+            result.recursos.sort(comparaPorNivel);
             mostrarRecursos(result);
             mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));
         });
@@ -101,6 +102,18 @@ function mostrarMensajeNoSeEncontraronRecursos(recursos) {
         </div>
     `;
     div.innerHTML = html;
+}
+
+/**
+ * Compara dos recursos por nivel
+ * @param {Recurso} a 
+ * @param {Recurso} b 
+ */
+function comparaPorNivel(a, b) {
+    if( a.nivel==b.nivel ) return 0;
+    if( a.nivel=="básico" ) return -1;
+    if( a.nivel=="medio" && b.nivel=="avanzado" ) return -1;
+    return 1;
 }
 /**
  * Muestra los recursos, cada uno en un div
@@ -199,6 +212,8 @@ function aplicarFiltros(filtros) {
         result.recursos = result.recursos.selectPorCampo(campo, valor);
     });
 
+    // Ordeno por orden de dificultad
+    result.recursos.sort(comparaPorNivel);
     mostrarRecursos(result);
 }
 
