@@ -250,6 +250,12 @@ footer p.enlaces {
     font-size: smaller;
 }
 
+footer p.creado-por {
+    border-top: 1px solid var(--rojo);
+    padding-top: .3em;
+    width: fit-content;
+}
+
 .nombre-proyecto {
     font-variant: small-caps;
 }
