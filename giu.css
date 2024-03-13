@@ -246,7 +246,7 @@ footer {
     border-left: 2px solid var(--rojo);
     padding-left: 1em;
 }
-footer p.enlaces {
+footer .enlaces {
     font-size: smaller;
 }
 
