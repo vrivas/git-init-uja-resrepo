@@ -85,6 +85,7 @@ function asignaEventosCheckbox() {
                 let [campo, valor] = selec.split("_");
                 result.recursos = result.recursos.selectPorCampo(campo, valor);
             });
+            result.recursos.sort(comparaPorNivel);
             mostrarRecursos(result);
             mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));
         });
@@ -101,6 +102,18 @@ function mostrarMensajeNoSeEncontraronRecursos(recursos) {
         </div>
     `;
     div.innerHTML = html;
+}
+
+/**
+ * Compara dos recursos por nivel
+ * @param {Recurso} a 
+ * @param {Recurso} b 
+ */
+function comparaPorNivel(a, b) {
+    if( a.nivel==b.nivel ) return 0;
+    if( a.nivel=="básico" ) return -1;
+    if( a.nivel=="medio" && b.nivel=="avanzado" ) return -1;
+    return 1;
 }
 /**
  * Muestra los recursos, cada uno en un div
@@ -125,12 +138,21 @@ function mostrarRecursos(objetoRecursos) {
  */
 function recurso2html(resource, num) {
     return `
-            <article class="recurso">
+            <article class="recurso recurso-nivel-${resource.nivel}">
                 <div class="contenedor-recurso-num"><p class="recurso-num">${num}</p></div>
+                <div class="recurso-nivel">${resource.nivel}</div>
                 <h3><a href="${resource.url}" target="_blank">${resource.titulo}</a></h3>
                 <p class="recurso-url">${resource.url}</p>
-                <p>Tags: ${resource.tags.join(", ")}</p>
-                <p>Formatos: ${resource.formatos.join(", ")}</p>
+                <div class="listados-chips">
+                    <div class="listado-chips-tags">
+                        <div class="listado-chips-label">Tags</div>
+                        ${resource.tags.map(e=>"<span class='chip-tag'>"+e+"</span> ").join("")}
+                    </div>
+                    <div class="listado-chips-formatos">
+                    <div class="listado-chips-label">Formatos</div>
+                        ${resource.formatos.map(e=>"<span class='chip-formato'>"+e+"</span> ").join("")}
+                    </div>
+                </div>
             </article>
         `;
 }
@@ -190,6 +212,8 @@ function aplicarFiltros(filtros) {
         result.recursos = result.recursos.selectPorCampo(campo, valor);
     });
 
+    // Ordeno por orden de dificultad
+    result.recursos.sort(comparaPorNivel);
     mostrarRecursos(result);
 }
 
