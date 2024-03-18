@@ -75,8 +75,10 @@ function asignaEventosCheckbox() {
     });
 }
 
-
-function mostrarMensajeNoSeEncontraronRecursos(recursos) {
+/**
+ * Muestra mensaje de error indicando que no se han encontrado recursos con el filtro seleccionado
+ */
+function mostrarMensajeNoSeEncontraronRecursos() {
     let div = document.getElementById("recursos");
     let html = `
         <div class="mensaje-error">
@@ -91,6 +93,8 @@ function mostrarMensajeNoSeEncontraronRecursos(recursos) {
  * Compara dos recursos por nivel
  * @param {Recurso} a 
  * @param {Recurso} b 
+ * @return Devuelve -1 si a es menor que b, 0 si son iguales y 1 si a es mayor que b,
+ *         siendo básico < medio < avanzado
  */
 function comparaPorNivel(a, b) {
     if( a.nivel==b.nivel ) return 0;
@@ -98,6 +102,7 @@ function comparaPorNivel(a, b) {
     if( a.nivel=="medio" && b.nivel=="avanzado" ) return -1;
     return 1;
 }
+
 /**
  * Muestra los recursos, cada uno en un div
  * @param {Objeto que contiene un título y un vector de recursos} objetoRecursos 
@@ -171,6 +176,7 @@ function getFiltrosPorParametro() {
 /**
  * Aplica los filtros leidos en la llamada a la URL a los correspondientes checkboxes
  * @param {Objeto} filtros 
+ * @returns Objeto con los recursos filtrados
  */
 function aplicarFiltros(filtros) {
     let cb = document.querySelectorAll("input[type=checkbox]");
@@ -194,13 +200,12 @@ function aplicarFiltros(filtros) {
         let [campo, valor] = selec.split("_");
         result.recursos = result.recursos.selectPorCampo(campo, valor);
     });
-
-    // Ordeno por orden de dificultad
     result.recursos.sort(comparaPorNivel);
     mostrarRecursos(result);
-    mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));
-}
+    mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));}
 
+
+ 
 /**
  * Crea un objeto con los filtros seleccionados en los checkboxes
  * @returns Vector con los filtros seleccionados
@@ -239,6 +244,12 @@ function setFiltrosEnURL(filtros) {
 }
 
 /**
+ * Busca recursos por contenido en el título
+ */
+function buscarPorContenidoTituloRecurso() {
+
+}
+/**
  * Escribe la URL generada a partir de los filtros de los recursos
  * @param {URL generada a partir de los filtros de los recursos} url 
  */
@@ -257,8 +268,6 @@ function main() {
     let filtros = getFiltrosPorParametro();
     aplicarFiltros(filtros);
     asignaEventosCheckbox();
-    mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));
-
 }
 
 /**
