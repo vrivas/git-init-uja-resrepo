@@ -207,7 +207,7 @@ function aplicarFiltros(filtros, busqueda ) {
         }
     });
     if( busqueda ) document.getElementById("buscar-recurso").value = busqueda;
-    
+
     let tmpSelec = Array.from(cb).filter((checkbox) => {
         return checkbox.checked;
     }).map((checkbox) => {
@@ -231,6 +231,7 @@ function aplicarFiltros(filtros, busqueda ) {
     result.recursos.sort(comparaPorNivel);
     mostrarRecursos(result);
     mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckboxYBusqueda()));
+    document.getElementById("buscar-recurso").focus();
 }
 
 
@@ -301,7 +302,8 @@ function main() {
     let {filtros,busqueda} = getFiltrosPorParametro();
     aplicarFiltros(filtros, busqueda);
     asignaEventosCheckbox();
-    document.getElementById("buscar-recurso-form").addEventListener("submit", buscarPorContenidoTituloRecurso);
+    document.getElementById("buscar-recurso-form").addEventListener("submit", buscarPorContenidoTituloRecurso)
+    document.getElementById("buscar-recurso").focus();
 }
 
 /**
