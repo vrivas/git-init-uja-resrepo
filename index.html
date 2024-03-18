@@ -2,35 +2,68 @@
 <html>
 
 <head>
-    <title>Home</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Repositorio Etiquetado de Recursos: Git-Init-UJA</title>
+     <meta charset="utf-8">
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    -->
+    
     <link rel="stylesheet" type="text/css" href="giu.css">
 </head>
 
 <body>
-    <div class="w3-sidebar w3-bar-block" id="sidebar">
-        <div id="indice-tags">
+    <header>
+            <img src="./assets/git-init-uja-1280x640-transp.png" 
+            alt="Logo de Git-Init-UJA" class="logo">
+        <h1>Repositorio <rojo>Etiquetado</rojo> de Recursos sobre <rojo>Git</rojo></h1>
+    </header>
+    <menu id="sidebar">
+        <h3>Filtros</h3>
+        <article id="indice-tags">
             <h4>Tags</h4>
             <div id="tags"></div>
-        </div>
-        <div id="indice-asignaturas">
-            <h4>Asignaturas</h4>
-            <div id="asignaturas"></div>
-        </div>
-        <div id="indice-formatos">
+        </article>
+        
+        <article id="indice-formatos">
             <h4>Formatos</h4>
             <div id="formatos"></div>
-        </div>
-    </div>
-    <div class="w3-main" id="main">
-        <div id="contenido">
-            <h1>Recursos seleccionados</h1>
-            <div id="url-generada"></div>
-            <div id="recursos"></div>
-        </div>
-    </div>
+        </article>
+        <!--article id="indice-asignaturas">
+            <h4>Asignaturas</h4>
+            <div id="asignaturas"></div>
+        </article-->
+    </menu>
+    <main id="main">
+            <h3 id="titulo-main">Recursos seleccionados</h3>
+            <section id="url-generada"></section>
+            <section id="recursos"></section>
+    </main>
 
+    <footer>
+        <div id="footer-containt">
+            <p>Financiado por Proyecto de Innovación y Mejora Docente:</p>
+            <p class="nombre-proyecto"><rojo>git-init-UJA</rojo>: desarrollo de itinerarios formativos sobre herramientas 
+                para <rojo>control  de versiones</rojo> en titulaciones con competencias en 
+                <rojo>programación</rojo> de ordenadores.<br/>(PIMED22_202224)
+            </p>
+            <p class="enlaces">
+                ℹ️ <a href="https://github.com/git-init-uja" target="_new">https://github.com/git-init-uja</a> - 
+                🗨️ <a href="https://www.ujaen.es/departamentos/dinformatica/contactos/rivas-santos-victor-manuel" target="_new">V. Rivas Santos</a> -
+                🏛️ <a href="https://www.ujaen.es" target="_new">Universidad de Jaén</a>
+            </p>
+            
+            <p class="creado-por">
+                Web por: <rojo>Víctor M.</rojo> Rivas Santos - <rojo>José Antonio</rojo> Montalbán Salvador
+                <br/>
+                <img src="assets/GitHub-Symbol-2149346605.png" width="20" alt="GitHub" class="icono-enlace"> 
+                <a class="enlaces" href="https://github.com/vrivas/git-init-uja-resrepo" target="_new">https://github.com/vrivas/git-init-uja-resrepo</a>
+
+            </p>
+        </div>
+    </footer>
     <script src="giu-resources.js"></script>
+    <script src="giu-resources_test.js"></script><script>//joinResourcesTest()</script>
     <script src="giu.js"></script>
     <script src="main.js"></script>
     <script>

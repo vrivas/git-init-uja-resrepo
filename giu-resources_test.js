@@ -1,5 +1,5 @@
 // fichero de recursos de prueba
-var resources = [
+var resources_test = [
     {
         titulo: "T1",
         url: "http://www.ejemplo.com",
@@ -49,3 +49,9 @@ var resources = [
     },
     
 ]
+
+
+// Une los ficheros de recursos de prueba con los recursos
+function joinResourcesTest() {
+    resources_test.forEach(e=>resources.push(e)) 
+}
