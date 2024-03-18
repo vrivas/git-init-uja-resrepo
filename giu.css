@@ -2,10 +2,18 @@
     /* Definición de constantes */
     --nivel-básico-oscuro: rgba(8, 117, 8, 1);
     --nivel-básico-claro: rgba(8, 117, 8, 0.2);
+    --nivel-básico-más-claro: rgb(108, 255, 108, 0.1);
+    
     --nivel-medio-oscuro: rgba(241, 144, 26, 1);
     --nivel-medio-claro: rgba(241, 144, 26, 0.2);
+    --nivel-medio-más-claro: rgba(255, 240, 220, 0.3);
+
+
     --nivel-avanzado-oscuro: rgba(225, 44, 44, 1);
     --nivel-avanzado-claro: rgba(225, 44, 44, 0.2);
+    --nivel-avanzado-más-claro: rgba(325, 144, 144, 0.1);
+
+    --recurso-sombra: rgba(180, 180, 180, .8);
 
     --fondo-gris-oscuro: rgba(180, 180, 180, 1);
     --fondo-chip-tag: green;
@@ -81,7 +89,9 @@ main {
 
 
 /*
-Estilos para mostrar cada uno de los recursos
+----------------------------------------------------------------------------------------------------------------
+                           RECURSOS
+----------------------------------------------------------------------------------------------------------------
 */
 .recurso {
     display: block;
@@ -91,6 +101,7 @@ Estilos para mostrar cada uno de los recursos
     background-color: white;
     border-radius: 0.4em;
     font-size: smaller;
+    box-shadow: 0.3em 0.3em var( --recurso-sombra );
 }
 
 .recurso-num {
@@ -118,9 +129,10 @@ Estilos para mostrar cada uno de los recursos
 .recurso-nivel-básico .recurso-nivel {
     color: var( --nivel-básico-oscuro );
 }
-.recurso-nivel-básico {
-    box-shadow: 0.3em 0.3em var( --nivel-básico-claro );
+.recurso.recurso-nivel-básico {
+    background-color:var( --nivel-básico-más-claro );
 }
+
 .recurso-nivel-básico, 
 .recurso-nivel-básico .recurso-num {
     border: 1px solid var( --nivel-básico-oscuro );
@@ -129,25 +141,29 @@ Estilos para mostrar cada uno de los recursos
 .recurso-nivel-medio .recurso-nivel {
     color: var( --nivel-medio-oscuro );
 }
-.recurso-nivel-medio {
-    box-shadow: 0.3em 0.3em var( --nivel-medio-claro );
+.recurso.recurso-nivel-medio {
+    background-color:var( --nivel-medio-más-claro );
 }
+
 .recurso-nivel-medio,
 .recurso-nivel-medio .recurso-num {
     border: 1px solid var( --nivel-medio-oscuro );
 }
 
+
 /* Recursos de nivel avanzado */
 .recurso-nivel-avanzado .recurso-nivel {
     color: var( --nivel-avanzado-oscuro );
 }
-.recurso-nivel-avanzado {
-    box-shadow: 0.3em 0.3em var( --nivel-avanzado-claro ); 
+.recurso.recurso-nivel-avanzado {
+    background-color:var( --nivel-avanzado-más-claro );
 }
+
 .recurso-nivel-avanzado, 
 .recurso-nivel-avanzado .recurso-num {
     border: 1px solid var( --nivel-avanzado-oscuro );
 }
+
 
 /* Estilos para las chips de tags, formatos, etc... */
 .listados-chips {
