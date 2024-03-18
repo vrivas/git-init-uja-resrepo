@@ -99,6 +99,10 @@ h3#titulo-main,
     margin: 1em 0em 1em 0em;
 }
 
+
+#buscar-recurso-btn {
+    display: none;
+}
 #url-generada {
     clear: both;
 }

@@ -247,7 +247,8 @@ function setFiltrosEnURL(filtros) {
  * Busca recursos por contenido en el título
  */
 function buscarPorContenidoTituloRecurso() {
-
+    let texto=document.getElementById("buscar-recurso").value;
+    alert( texto )
 }
 /**
  * Escribe la URL generada a partir de los filtros de los recursos
@@ -268,6 +269,7 @@ function main() {
     let filtros = getFiltrosPorParametro();
     aplicarFiltros(filtros);
     asignaEventosCheckbox();
+    document.getElementById("buscar-recurso-form").addEventListener("submit", buscarPorContenidoTituloRecurso);
 }
 
 /**
