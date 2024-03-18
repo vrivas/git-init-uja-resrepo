@@ -219,12 +219,13 @@ function aplicarFiltros(filtros, busqueda ) {
     });
 
     // Cribamos por la cadena de búsqueda
+    busqueda=document.getElementById("buscar-recurso").value;
     if (busqueda) {
         result.recursos = result.recursos.selectPorCadenaEnTitulo(busqueda);
     }
     result.recursos.sort(comparaPorNivel);
     mostrarRecursos(result);
-    mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));
+    mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckboxYBusqueda()));
 }
 
 
@@ -233,7 +234,7 @@ function aplicarFiltros(filtros, busqueda ) {
  * Crea un objeto con los filtros seleccionados en los checkboxes
  * @returns Vector con los filtros seleccionados
  */
-function setFiltrosPorCheckbox() {
+function setFiltrosPorCheckboxYBusqueda() {
     let cb = document.querySelectorAll("input[type=checkbox]");
     let filtros = {};
     cb.forEach((checkbox) => {
@@ -246,6 +247,7 @@ function setFiltrosPorCheckbox() {
             }
         }
     });
+    filtros["q"] = [document.getElementById("buscar-recurso").value];
     return filtros;
 }
 
@@ -256,7 +258,7 @@ function setFiltrosPorCheckbox() {
  */
 function setFiltrosEnURL(filtros) {
     let url = new URL(window.location.href);
-    let searchParams = new URLSearchParams(url.search);
+    let searchParams = new URLSearchParams("");
     for (let key in filtros) {
         searchParams.set(key, filtros[key].join(","));
     }
@@ -271,7 +273,7 @@ function setFiltrosEnURL(filtros) {
  */
 function buscarPorContenidoTituloRecurso(ev) {
     let texto=document.getElementById("buscar-recurso").value;
-    aplicarFiltros(setFiltrosPorCheckbox(), texto);
+    aplicarFiltros(setFiltrosPorCheckboxYBusqueda(), texto);
     ev.preventDefault();
 }
 
