@@ -85,8 +85,23 @@ main {
     margin-left: 1%;
 }
 
+h3#titulo-main {
+    float: left;
+    width: 70%;
+}
+h3#buscar-recurso-por-contenido-titulo {
+    float: right;
+    width: 30%;
+    text-align: right;
+}
+h3#titulo-main,
+#buscar-recurso-por-contenido-titulo {
+    margin: 1em 0em 1em 0em;
+}
 
-
+#url-generada {
+    clear: both;
+}
 
 /*
 ----------------------------------------------------------------------------------------------------------------
