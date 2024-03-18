@@ -31,6 +31,22 @@ Array.prototype.selectPorCampo = function (campo, terminos) {
 }
 
 /**
+ * Método de Array que devuelve todos los recursos que contienen la cadena en el título
+ * @param {Cadena} Busqueda
+ * @returns Vector con los recursos que contiene la cadena de busqueda en el título
+ */
+Array.prototype.selectPorCadenaEnTitulo = function (busqueda) {
+    let result = null;
+    if (!busqueda) result = [];
+     if (!result) {
+        result = this.filter(function (resource) {
+            return resource.titulo.toLowerCase().includes(busqueda.toLowerCase());
+        });
+    }
+    return result;
+}
+
+/**
  * Crea un vector de strings con un índice de los valores de un campo
  * @param {String} campo 
  * @returns Devuelve un índice de los valores de un campo
@@ -176,9 +192,10 @@ function getFiltrosPorParametro() {
 /**
  * Aplica los filtros leidos en la llamada a la URL a los correspondientes checkboxes
  * @param {Objeto} filtros 
- * @returns Objeto con los recursos filtrados
+ * @param {Cadena} busqueda
+ * @returns Objeto con los recursos filtrados por los checkbox y por la cadena de búsqueda
  */
-function aplicarFiltros(filtros) {
+function aplicarFiltros(filtros, busqueda ) {
     let cb = document.querySelectorAll("input[type=checkbox]");
     cb.forEach((checkbox) => {
         let [campo, valor] = checkbox.value.split("_");
@@ -200,9 +217,15 @@ function aplicarFiltros(filtros) {
         let [campo, valor] = selec.split("_");
         result.recursos = result.recursos.selectPorCampo(campo, valor);
     });
+
+    // Cribamos por la cadena de búsqueda
+    if (busqueda) {
+        result.recursos = result.recursos.selectPorCadenaEnTitulo(busqueda);
+    }
     result.recursos.sort(comparaPorNivel);
     mostrarRecursos(result);
-    mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));}
+    mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));
+}
 
 
  
@@ -246,10 +269,12 @@ function setFiltrosEnURL(filtros) {
 /**
  * Busca recursos por contenido en el título
  */
-function buscarPorContenidoTituloRecurso() {
+function buscarPorContenidoTituloRecurso(ev) {
     let texto=document.getElementById("buscar-recurso").value;
-    alert( texto )
+    aplicarFiltros(setFiltrosPorCheckbox(), texto);
+    ev.preventDefault();
 }
+
 /**
  * Escribe la URL generada a partir de los filtros de los recursos
  * @param {URL generada a partir de los filtros de los recursos} url 
