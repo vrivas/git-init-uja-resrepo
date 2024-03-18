@@ -178,15 +178,18 @@ function eliminaCriteriosBusquedaDuplicados() {
  */
 function getFiltrosPorParametro() {
     let filtros = {};
+    let busqueda = "";
     let url = new URL(window.location.href);
     let searchParams = new URLSearchParams(url.search);
     searchParams.forEach((value, key) => {
         if (key != "q") {
             filtros[key] = value.split(",").map((e) => e.trim());
+        } else {
+            busqueda = value;
         }
     });
     console.log("Filtros", filtros);
-    return filtros;
+    return {filtros, busqueda};
 }
 
 /**
@@ -203,6 +206,8 @@ function aplicarFiltros(filtros, busqueda ) {
             checkbox.checked = true;
         }
     });
+    if( busqueda ) document.getElementById("buscar-recurso").value = busqueda;
+    
     let tmpSelec = Array.from(cb).filter((checkbox) => {
         return checkbox.checked;
     }).map((checkbox) => {
@@ -219,7 +224,7 @@ function aplicarFiltros(filtros, busqueda ) {
     });
 
     // Cribamos por la cadena de búsqueda
-    busqueda=document.getElementById("buscar-recurso").value;
+    //busqueda=document.getElementById("buscar-recurso").value;
     if (busqueda) {
         result.recursos = result.recursos.selectPorCadenaEnTitulo(busqueda);
     }
@@ -293,8 +298,8 @@ function main() {
     escribeCheckbox("tags", resources.creaIndice("tags"));
     //escribeCheckbox("asignaturas", resources.creaIndice("asignaturas"));
     escribeCheckbox("formatos", resources.creaIndice("formatos"));
-    let filtros = getFiltrosPorParametro();
-    aplicarFiltros(filtros);
+    let {filtros,busqueda} = getFiltrosPorParametro();
+    aplicarFiltros(filtros, busqueda);
     asignaEventosCheckbox();
     document.getElementById("buscar-recurso-form").addEventListener("submit", buscarPorContenidoTituloRecurso);
 }
