@@ -7,6 +7,7 @@
 
 // Constantes
 const ULTIMOS_RECURSOS = 5;
+const MAX_URL_LENGTH = 50;
 
 /**
  * Método de Array que devuelve todos los recursos que contienen alguno de los términos en el campo indicado
@@ -141,8 +142,7 @@ function recurso2html(resource, num) {
             <article class="recurso recurso-nivel-${resource.nivel}">
                 <div class="contenedor-recurso-num"><p class="recurso-num">${num}</p></div>
                 <div class="recurso-nivel">${resource.nivel}</div>
-                <h3><a href="${resource.url}" target="_blank">${resource.titulo}</a></h3>
-                <p class="recurso-url">${resource.url}</p>
+                <h3 class="recurso-titulo"><a href="${resource.url}" target="_blank">${resource.titulo}</a></h3>
                 <div class="listados-chips">
                     <div class="listado-chips-tags">
                         <div class="listado-chips-label">Tags</div>
@@ -153,6 +153,7 @@ function recurso2html(resource, num) {
                         ${resource.formatos.map(e=>"<span class='chip-formato'>"+e+"</span> ").join("")}
                     </div>
                 </div>
+                <div class="recurso-url">${resource.url.split("/")[2]}</div>
             </article>
         `;
 }
