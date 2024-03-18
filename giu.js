@@ -71,25 +71,7 @@ function escribeCheckbox(divId, valores) {
 function asignaEventosCheckbox() {
     let cb = document.querySelectorAll("input[type=checkbox]");
     cb.forEach(function (checkbox) {
-        checkbox.addEventListener("change", function (event) {
-            let tmpSelec = Array.from(cb).filter(function (checkbox) {
-                return checkbox.checked;
-            }).map(function (checkbox) {
-                return checkbox.value;
-            });
-            let result = tmpSelec.length ? {
-                "titulo": "Recursos encontrados",
-                "recursos": resources.filter(e => true)
-            } : ultimosNRecursos();
-        
-            tmpSelec.forEach(function (selec) {
-                let [campo, valor] = selec.split("_");
-                result.recursos = result.recursos.selectPorCampo(campo, valor);
-            });
-            result.recursos.sort(comparaPorNivel);
-            mostrarRecursos(result);
-            mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));
-        });
+        checkbox.addEventListener("change", aplicarFiltros)
     });
 }
 
@@ -216,6 +198,7 @@ function aplicarFiltros(filtros) {
     // Ordeno por orden de dificultad
     result.recursos.sort(comparaPorNivel);
     mostrarRecursos(result);
+    mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckbox()));
 }
 
 /**
