@@ -224,7 +224,7 @@ function aplicarFiltros(filtros, busqueda ) {
     });
 
     // Cribamos por la cadena de búsqueda
-    //busqueda=document.getElementById("buscar-recurso").value;
+    busqueda=busqueda||document.getElementById("buscar-recurso").value;
     if (busqueda) {
         result.recursos = result.recursos.selectPorCadenaEnTitulo(busqueda);
     }
@@ -294,7 +294,9 @@ function mostrarURLGeneradaPorFiltros(url) {
 
 
 
-
+/**
+ * Copia la URL generada al portapapeles
+ */
 function copiarURLGenerada() {
     let url = document.getElementById("url-generada").querySelector("a").href;
     navigator.clipboard.writeText(url);
