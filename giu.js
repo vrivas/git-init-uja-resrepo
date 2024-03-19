@@ -40,7 +40,9 @@ Array.prototype.selectPorCadenaEnTitulo = function (busqueda) {
     if (!busqueda) result = [];
      if (!result) {
         result = this.filter(function (resource) {
-            return resource.titulo.toLowerCase().includes(busqueda.toLowerCase());
+            let tituloNormalizado = resource.titulo.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            let busquedaNormalizada = busqueda.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            return tituloNormalizado.includes(busquedaNormalizada);
         });
     }
     return result;
