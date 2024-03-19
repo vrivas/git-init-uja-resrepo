@@ -291,6 +291,16 @@ function mostrarURLGeneradaPorFiltros(url) {
     let div = document.getElementById("url-generada");
     div.innerHTML = `<a href="${url}">${url}</a>`;
 }
+
+
+
+
+function copiarURLGenerada() {
+    let url = document.getElementById("url-generada").querySelector("a").href;
+    navigator.clipboard.writeText(url);
+    alert("URL copiada al portapapeles");
+}
+
 /**
  * Función principal
  */
@@ -301,9 +311,12 @@ function main() {
     escribeCheckbox("formatos", resources.creaIndice("formatos"));
     let {filtros,busqueda} = getFiltrosPorParametro();
     aplicarFiltros(filtros, busqueda);
+
+    // ASignación de eventos
     asignaEventosCheckbox();
     document.getElementById("buscar-recurso-form").addEventListener("submit", buscarPorContenidoTituloRecurso)
     document.getElementById("buscar-recurso").focus();
+    document.getElementById("copiar-url-generada-btn").addEventListener("click", copiarURLGenerada);
 }
 
 /**
