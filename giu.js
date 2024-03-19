@@ -230,7 +230,7 @@ function aplicarFiltros(filtros, busqueda ) {
     }
     result.recursos.sort(comparaPorNivel);
     mostrarRecursos(result);
-    mostrarURLGeneradaPorFiltros(setFiltrosEnURL(setFiltrosPorCheckboxYBusqueda()));
+    mostrarURLGeneradaPorFiltros(decodeURIComponent(setFiltrosEnURL(setFiltrosPorCheckboxYBusqueda())));
     document.getElementById("buscar-recurso").focus();
 }
 
