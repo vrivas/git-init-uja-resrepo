@@ -21,6 +21,10 @@
 
     --fondo-secciones: white;
 
+    --fondo-campo-busqueda: rgb(158, 255, 158, 0.1);
+    --recuadro-campo-busqueda: rgba(8, 117, 8, 0.2);
+
+
     --rojo: #f05133;
 }
 * {
@@ -85,18 +89,16 @@ main {
     margin-left: 1%;
 }
 
-h3#titulo-main {
+/*h3#titulo-main {
     float: left;
     width: 70%;
-}
-h3#buscar-recurso-por-contenido-titulo {
-    float: right;
-    width: 30%;
-    text-align: right;
-}
-h3#titulo-main,
+}*/
+
+
+#titulo-main,
 #buscar-recurso-por-contenido-titulo {
     margin: 1em 0em 1em 0em;
+    width: 100%;
 }
 
 
@@ -318,8 +320,14 @@ footer p.creado-por {
 
 #buscar-recurso,
 #buscar-recurso:focus {
-   box-shadow: 0 0 10px green; 
+   /*box-shadow: 0 0 10px green; */
     outline: none;
-    border: 0px solid green;
+    border: 2px solid var(--recuadro-campo-busqueda);
     padding: .3em;
+    width: 80%;
+    padding-left: 20px;
+    background: url("./assets/lupa.png") no-repeat left;
+    background-size: 18px;
+    background-color: var(--fondo-campo-busqueda);
+    
 }
