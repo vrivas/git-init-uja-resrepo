@@ -261,11 +261,13 @@ h3#titulo-main,
 
 
 menu h4 {
-    margin: 1em 0em 0em 0em;
-    border: 1px solid var(--fondo-gris-oscuro);
-    background-color: var(--fondo-gris-oscuro);
-    border-radius: 0.4em;
+    margin: 1em 2em 0em 0em;
+    border-bottom: 2px dashed var(--fondo-gris-oscuro);
+    abackground-color: var(--fondo-gris-oscuro);
+    aborder-radius: 0.4em;
     padding: 0.1em;
+    padding-left: .3em;
+    
     font-variant: small-caps;
 
 }
