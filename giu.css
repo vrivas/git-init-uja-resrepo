@@ -242,6 +242,8 @@ h3#titulo-main,
     font-size: 80%;
     padding: 0em .3em 0em .3em;
     color: white;
+    font-weight: bold;
+    letter-spacing: .1em;
 }
 
 .chip-formato {
@@ -312,4 +314,12 @@ footer p.creado-por {
 
 .nombre-proyecto {
     font-variant: small-caps;
+}
+
+#buscar-recurso,
+#buscar-recurso:focus {
+   box-shadow: 0 0 10px green; 
+    outline: none;
+    border: 0px solid green;
+    padding: .3em;
 }

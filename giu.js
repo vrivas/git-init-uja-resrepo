@@ -253,7 +253,8 @@ function setFiltrosPorCheckboxYBusqueda() {
             }
         }
     });
-    filtros["q"] = [document.getElementById("buscar-recurso").value];
+    let busqueda=document.getElementById("buscar-recurso").value;
+    if( busqueda) filtros["q"] = [document.getElementById("buscar-recurso").value];
     return filtros;
 }
 
@@ -303,6 +304,9 @@ function copiarURLGenerada() {
     alert("URL copiada al portapapeles");
 }
 
+
+
+
 /**
  * Función principal
  */
@@ -316,9 +320,11 @@ function main() {
 
     // ASignación de eventos
     asignaEventosCheckbox();
-    document.getElementById("buscar-recurso-form").addEventListener("submit", buscarPorContenidoTituloRecurso)
-    document.getElementById("buscar-recurso").focus();
+    //document.getElementById("buscar-recurso-form").addEventListener("submit", buscarPorContenidoTituloRecurso)
+    document.getElementById("buscar-recurso").addEventListener("keyup", buscarPorContenidoTituloRecurso)
     document.getElementById("copiar-url-generada-btn").addEventListener("click", copiarURLGenerada);
+
+    document.getElementById("buscar-recurso").focus();
 }
 
 /**
