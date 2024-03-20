@@ -92,7 +92,7 @@ var resources = [
         duracion: 1,
     },
     {
-        titulo: "¿Cómo exluir archivos del control de versiones? (.gitignore)",
+        titulo: "¿Cómo excluir archivos del control de versiones? (.gitignore)",
         url: "https://www.youtube.com/watch?v=w44lFiaiAiw",
         tags: ["local","remoto"],
         asignaturas: [],
