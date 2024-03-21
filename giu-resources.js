@@ -73,7 +73,7 @@ var resources = [
         idiomas: ["español"],
     },
     {
-        titulo: "¿Para qué sirven las etiquetas(tags) en git?",
+        titulo: "¿Para qué sirven las etiquetas (tags) en git?",
         url: "https://www.youtube.com/watch?v=ywzdb2brvt8",
         tags: ["local","remoto"],
         asignaturas: [],
@@ -158,7 +158,7 @@ var resources = [
         idiomas: ["español"],
     },
     {
-        titulo: "Crear y asignar propuestas(issues) en un repositorio de GitHub.",
+        titulo: "Crear y asignar propuestas (issues) en un repositorio de GitHub.",
         url: "https://docs.github.com/es/issues/tracking-your-work-with-issues/quickstart",
         tags: ["remoto"],
         asignaturas: [],
@@ -226,7 +226,7 @@ var resources = [
         idiomas: ["español"],
     },
     {
-        titulo: "What’s the difference between mergging and rebasing in Git?",
+        titulo: "What’s the difference between merging and rebasing in Git?",
         url: "https://www.youtube.com/shorts/nzv0sbfprJo",
         tags: ["local"],
         asignaturas: [],
@@ -255,4 +255,15 @@ var resources = [
         duracion: 1,
         idiomas: ["español"],
     },
+    {
+        titulo: "Curso de git y github desde cero para principiantes.",
+        url: "https://www.youtube.com/watch?v=3GymExBkKjE",
+        tags: ["clone", "init", "local", "markdown", "ramas", "remoto"],
+        asignaturas: [],
+        formatos: ["video"],
+        nivel: ["básico"],
+        duracion: 305,
+        idiomas: ["español"],
+    },
+    
 ]
