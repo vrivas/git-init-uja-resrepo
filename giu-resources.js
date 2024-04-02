@@ -131,7 +131,7 @@ var resources = [
         idiomas: ["español"],
     },
     {
-        titulo: "Editor Markdown online para editar README.md.",
+        titulo: "StackEdit: In-browser Markdown editor",
         url: "https://stackedit.io/",
         tags: ["markdown"],
         asignaturas: [],
@@ -140,7 +140,7 @@ var resources = [
         idiomas: ["inglés"],
     },
     {
-        titulo: "Sintaxis Markdown para mejorar apariencia del fichero README.md.",
+        titulo: "Markdown Guide. Basic Syntax.",
         url: "https://www.markdownguide.org/basic-syntax/",
         tags: ["markdown"],
         asignaturas: [],
