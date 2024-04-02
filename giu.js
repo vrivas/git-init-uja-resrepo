@@ -8,6 +8,7 @@
 // Constantes
 const ULTIMOS_RECURSOS = 5;
 const MAX_URL_LENGTH = 50;
+const FILTROS = ["tags", "asignaturas", "formatos", "nivel", "idiomas"];
 
 /**
  * Método de Array que devuelve todos los recursos que contienen alguno de los términos en el campo indicado
@@ -67,18 +68,46 @@ Array.prototype.creaIndice = function (campo) {
     return result.sort();
 }
 
+/**
+ * Crea un vector de objetos con dos campos: un valor para un campo y el número de recursos que lo contienen
+ * @param {String} campo 
+ * @returns Devuelve un índice de los valores de un campo más el número de recursos que lo contienen
+ */
+Array.prototype.creaIndiceConCardinalidad = function (campo) {
+    let terminos = [];
+    if (campo) {
+        this.forEach(function (resource) {
+            if (typeof resource[campo] != "undefined") {
+                resource[campo].forEach(function (termino) {
+                    if (!terminos.includes(termino)) terminos.push(termino);
+                });
+            }
+        });
+    }
+    terminos.sort();
+    let result = terminos.map(function (termino) {
+        return {
+            "valor": termino,
+            "cardinalidad": resources.selectPorCampo(campo, termino).length
+        };
+    });
+    return result;
+}
+
 
 /**
  * Muestra todos los elementos de un índice como checboxes
  * @param {String} divId Div en el que se van a mostrar los checkboxes 
- * @param {Vector de cadenas} valores Conjunto de valores que se van a mostrar
+ * @param {Vector de pares} valores Conjunto de pares {termino,cardinalidad} que se van a mostrar
  */
 function escribeCheckbox(divId, valores) {
     let div = document.getElementById(divId);
     let html = "";
-    valores.forEach(function (valor) {
+    valores.forEach(function (par) {
+        let valor = par.valor;
+        let cardinalidad = par.cardinalidad;
         html += `<input type="checkbox" name="cb" value="${divId}_${valor}" id="${divId}_${valor}">
-        <label for="${divId}_${valor}">${valor}</label><br>`;
+        <label for="${divId}_${valor}">${valor} <span class='cardinalidad'>(${cardinalidad})</span></label><br>`;
     });
     div.innerHTML = html;
 }
@@ -168,9 +197,9 @@ function recurso2html(resource, num) {
  */
 function eliminaCriteriosBusquedaDuplicados() {
     resources.forEach(function (resource) {
-        if (resource.formatos) resource.formatos = resource.formatos.sort().filter((e, i, v) => v[i] != v[i + 1])
-        if (resource.tags) resource.tags = resource.tags.sort().filter((e, i, v) => v[i] != v[i + 1])
-        //if (resource.asignaturas) resource.asignaturas = resource.asignaturas.sort().filter((e, i, v) => v[i] != v[i + 1])
+        FILTROS.forEach(function (filtro) {
+            if (resource[filtro]) resource[filtro] = resource[filtro].sort().filter((e, i, v) => v[i] != v[i + 1])
+        })
     });
 }
 
@@ -314,9 +343,11 @@ function copiarURLGenerada() {
  */
 function main() {
     eliminaCriteriosBusquedaDuplicados();
-    escribeCheckbox("tags", resources.creaIndice("tags"));
-    //escribeCheckbox("asignaturas", resources.creaIndice("asignaturas"));
-    escribeCheckbox("formatos", resources.creaIndice("formatos"));
+    FILTROS.forEach(function (filtro) {
+        escribeCheckbox(filtro, resources.creaIndiceConCardinalidad(filtro));
+    });
+    
+
     let {filtros,busqueda} = getFiltrosPorParametro();
     aplicarFiltros(filtros, busqueda);
 
