@@ -8,6 +8,7 @@
 // Constantes
 const ULTIMOS_RECURSOS = 5;
 const MAX_URL_LENGTH = 50;
+const FILTROS = ["tags", "asignaturas", "formatos", "nivel", "idiomas"];
 
 /**
  * Método de Array que devuelve todos los recursos que contienen alguno de los términos en el campo indicado
@@ -168,9 +169,9 @@ function recurso2html(resource, num) {
  */
 function eliminaCriteriosBusquedaDuplicados() {
     resources.forEach(function (resource) {
-        if (resource.formatos) resource.formatos = resource.formatos.sort().filter((e, i, v) => v[i] != v[i + 1])
-        if (resource.tags) resource.tags = resource.tags.sort().filter((e, i, v) => v[i] != v[i + 1])
-        //if (resource.asignaturas) resource.asignaturas = resource.asignaturas.sort().filter((e, i, v) => v[i] != v[i + 1])
+        FILTROS.forEach(function (filtro) {
+            if (resource[filtro]) resource[filtro] = resource[filtro].sort().filter((e, i, v) => v[i] != v[i + 1])
+        })
     });
 }
 
@@ -314,9 +315,11 @@ function copiarURLGenerada() {
  */
 function main() {
     eliminaCriteriosBusquedaDuplicados();
-    escribeCheckbox("tags", resources.creaIndice("tags"));
-    //escribeCheckbox("asignaturas", resources.creaIndice("asignaturas"));
-    escribeCheckbox("formatos", resources.creaIndice("formatos"));
+    FILTROS.forEach(function (filtro) {
+        escribeCheckbox(filtro, resources.creaIndice(filtro));
+    });
+    
+
     let {filtros,busqueda} = getFiltrosPorParametro();
     aplicarFiltros(filtros, busqueda);
 
