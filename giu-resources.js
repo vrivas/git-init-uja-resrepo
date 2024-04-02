@@ -16,6 +16,7 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["básico"], 
+        idiomas: ["español"],
     },
     {
         titulo: "Conociendo Git y creando mi primer repositorio local.",
@@ -24,6 +25,7 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["básico"],
+        idiomas: ["español"],
     },
     {
         titulo: "Navegando por el Terminal Git Bash.",
@@ -32,6 +34,7 @@ var resources = [
         asignaturas: ["Sistemas Operativos"],
         formatos: ["web"],
         nivel: ["básico"],
+        idiomas: ["español"],
     },    
     {
         titulo: "Buenas prácticas al trabajar con Git.",
@@ -40,6 +43,7 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["medio"],
+        idiomas: ["español"],
     },
     {
         titulo: "Trabajar con ramas en Git.",
@@ -48,6 +52,7 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["básico"],
+        idiomas: ["español"],
     },
     {
         titulo: "Cómo fusionar ramas con git merge y resolver conflictos.",
@@ -56,6 +61,7 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["medio"],
+        idiomas: ["español"],
     },
     {
         titulo: "Cómo actualizar un repositorio local y remoto con git push y git pull.",
@@ -64,15 +70,17 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["medio"],
+        idiomas: ["español"],
     },
     {
-        titulo: "¿Para qué sirven las etiquetas(tags) en git?",
+        titulo: "¿Para qué sirven las etiquetas (tags) en git?",
         url: "https://www.youtube.com/watch?v=ywzdb2brvt8",
         tags: ["local","remoto"],
         asignaturas: [],
         formatos: ["video"],
         nivel: ["medio"],
         duracion: 4,
+        idiomas: ["español"],
     },
     {
         titulo: "Listado de comandos en git.",
@@ -81,6 +89,7 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["avanzado"],
+        idiomas: ["español"],
     },
     {
         titulo: "¿Qué son las GitHub Actions?",
@@ -90,15 +99,17 @@ var resources = [
         formatos: ["video"],
         nivel: ["avanzado"],
         duracion: 1,
+        idiomas: ["español"],
     },
     {
-        titulo: "¿Cómo exluir archivos del control de versiones? (.gitignore)",
+        titulo: "¿Cómo excluir archivos del control de versiones? (.gitignore)",
         url: "https://www.youtube.com/watch?v=w44lFiaiAiw",
         tags: ["local","remoto"],
         asignaturas: [],
         formatos: ["video"],
         nivel: ["medio"],
         duracion: 4,
+        idiomas: ["español"],
     },
     {
         titulo: "Crear repositorio remoto en GitHub.",
@@ -107,6 +118,7 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["básico"],
+        idiomas: ["español"],
     },
     {
         titulo: "¿Qué es el lenguaje de marcado Markdown?",
@@ -116,6 +128,7 @@ var resources = [
         formatos: ["video"],
         nivel: ["básico"],
         duracion: 1,
+        idiomas: ["español"],
     },
     {
         titulo: "Editor Markdown online para editar README.md.",
@@ -124,6 +137,7 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["básico"],
+        idiomas: ["inglés"],
     },
     {
         titulo: "Sintaxis Markdown para mejorar apariencia del fichero README.md.",
@@ -132,6 +146,7 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["avanzado"],
+        idiomas: ["inglés"],
     },
     {
         titulo: "Cómo contribuir en un repositorio en GitHub con Fork y Pull Request(PR).",
@@ -140,14 +155,16 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["avanzado"],
+        idiomas: ["español"],
     },
     {
-        titulo: "Crear y asignar propuestas(issues) en un repositorio de GitHub.",
+        titulo: "Crear y asignar propuestas (issues) en un repositorio de GitHub.",
         url: "https://docs.github.com/es/issues/tracking-your-work-with-issues/quickstart",
         tags: ["remoto"],
         asignaturas: [],
         formatos: ["web"],
         nivel: ["medio"],
+        idiomas: ["español"],
     },
     {
         titulo: "Deshacer cambios en Git con git revert.",
@@ -157,6 +174,7 @@ var resources = [
         formatos: ["video"],
         nivel: ["medio"],
         duracion: 7,
+        idiomas: ["español"],
     },
     {
         titulo: "Estados en Git.",
@@ -165,6 +183,7 @@ var resources = [
         asignaturas: [],
         formatos: ["web"],
         nivel: ["básico"],
+        idiomas: ["español"],
     },
     {
         titulo: "Learn Git Rebase.",
@@ -174,6 +193,7 @@ var resources = [
         formatos: ["video"],
         nivel: ["avanzado"],
         duracion: 7,
+        idiomas: ["inglés"],
     },
     {
         titulo: "Cómo descargar carpetas y ficheros de Github.",
@@ -183,6 +203,7 @@ var resources = [
         formatos: ["video"],
         nivel: ["básico"],
         duracion: 2,
+        idiomas: ["español"],
     },
     {
         titulo: "Configura Gitignore para cualquier tecnología.",
@@ -192,6 +213,7 @@ var resources = [
         formatos: ["video"],
         nivel: ["medio"],
         duracion: 1,
+        idiomas: ["español"],
     },
     {
         titulo: "Cómo clonar un repositorio de github.",
@@ -201,15 +223,17 @@ var resources = [
         formatos: ["video"],
         nivel: ["básico"],
         duracion: 1,
+        idiomas: ["español"],
     },
     {
-        titulo: "What’s the difference between mergging and rebasing in Git?",
+        titulo: "What’s the difference between merging and rebasing in Git?",
         url: "https://www.youtube.com/shorts/nzv0sbfprJo",
         tags: ["local"],
         asignaturas: [],
         formatos: ["video"],
         nivel: ["avanzado"],
         duracion: 1,
+        idiomas: ["inglés"],
     },
     {
         titulo: "Qué es y cómo usar git stash",
@@ -219,6 +243,7 @@ var resources = [
         formatos: ["video"],
         nivel: ["avanzado"],
         duracion: 6,
+        idiomas: ["español"],
     },
     {
         titulo: "Actualizar un commit en Git.",
@@ -228,5 +253,17 @@ var resources = [
         formatos: ["video"],
         nivel: ["básico"],
         duracion: 1,
+        idiomas: ["español"],
     },
+    {
+        titulo: "Curso de git y github desde cero para principiantes.",
+        url: "https://www.youtube.com/watch?v=3GymExBkKjE",
+        tags: ["clone", "init", "local", "markdown", "ramas", "remoto"],
+        asignaturas: [],
+        formatos: ["video"],
+        nivel: ["básico"],
+        duracion: 305,
+        idiomas: ["español"],
+    },
+    
 ]
