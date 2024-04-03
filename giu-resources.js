@@ -236,7 +236,7 @@ var resources = [
         idiomas: ["inglés"],
     },
     {
-        titulo: "Qué es y cómo usar git stash",
+        titulo: "Qué es y cómo usar git stash.",
         url: "https://www.youtube.com/watch?v=fD7ZOK5kZMs",
         tags: ["local"],
         asignaturas: [],
@@ -264,6 +264,24 @@ var resources = [
         nivel: ["básico"],
         duracion: 305,
         idiomas: ["español"],
+    },
+    {
+        titulo: "Git Succinctly ebook.",
+        url: "https://www.syncfusion.com/succinctly-free-ebooks/git",
+        tags: ["clone", "init", "local", "ramas", "remoto"],
+        asignaturas: [],
+        formatos: ["pfd"],
+        nivel: ["avanzado"],
+        idiomas: ["inglés"],
+    },
+    {
+        titulo: "GitHub Succinctly ebook.",
+        url: "https://www.syncfusion.com/succinctly-free-ebooks/github-succinctly",
+        tags: ["clone", "ramas", "remoto"],
+        asignaturas: [],
+        formatos: ["pfd"],
+        nivel: ["avanzado"],
+        idiomas: ["inglés"],
     },
     
 ]
