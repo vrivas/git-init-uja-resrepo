@@ -373,4 +373,22 @@ var resources = [
         nivel: ["avanzado"],
         idiomas: ["inglés"],
     },
+    {
+        titulo: "An open source game about learning Git!",
+        url: "https://ohmygit.org/",
+        tags: ["init", "local", "ramas"],
+        asignaturas: ["Programación Orientada a Objetos", "Fundamentos de Programación"],
+        formatos: ["web"],
+        nivel: ["básico"],
+        idiomas: ["inglés"],
+    },
+    {
+        titulo: "Learn Git Branching!",
+        url: "https://learngitbranching.js.org/?locale=es_ES",
+        tags: ["init", "local", "clone","ramas", "remoto"],
+        asignaturas: ["Programación Orientada a Objetos", "Fundamentos de Programación"],
+        formatos: ["web"],
+        nivel: ["medio"],
+        idiomas: ["español"],
+    },
 ]
