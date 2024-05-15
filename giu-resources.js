@@ -274,24 +274,7 @@ var resources = [
         nivel: ["avanzado"],
         idiomas: ["inglés"],
     },
-    {
-        titulo: "GitHub Succinctly ebook.",
-        url: "https://www.syncfusion.com/succinctly-free-ebooks/github-succinctly",
-        tags: ["clone", "ramas", "remoto"],
-        asignaturas: [],
-        formatos: ["pfd"],
-        nivel: ["avanzado"],
-        idiomas: ["inglés"],
-    },
-    {
-        titulo: "GitHub Succinctly ebook.",
-        url: "https://www.syncfusion.com/succinctly-free-ebooks/github-succinctly",
-        tags: ["clone", "ramas", "remoto"],
-        asignaturas: [],
-        formatos: ["pfd"],
-        nivel: ["avanzado"],
-        idiomas: ["inglés"],
-    },
+   
     {
         titulo: "Managing Git Repositories with IntelliJ.",
         url: "https://www.jetbrains.com/help/idea/using-git-integration.html",
