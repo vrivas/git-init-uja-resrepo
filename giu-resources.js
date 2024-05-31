@@ -270,7 +270,7 @@ var resources = [
         url: "https://www.syncfusion.com/succinctly-free-ebooks/git",
         tags: ["clone", "init", "local", "ramas", "remoto"],
         asignaturas: [],
-        formatos: ["pfd"],
+        formatos: ["pdf"],
         nivel: ["avanzado"],
         idiomas: ["inglés"],
     },
