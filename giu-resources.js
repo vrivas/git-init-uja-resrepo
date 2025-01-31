@@ -10,6 +10,15 @@ var resources = [
     },
     */
     {
+        titulo: "Sintaxis Markdown",
+        url: "https://markdown.es/sintaxis-markdown/",
+        tags: ["markdown"],
+        asignaturas: ["Desarrollo Ágil"],
+        formatos: ["web", "video"],
+        nivel: ["básico"],
+        idiomas: ["español"]
+    },
+    {
         titulo: "Cómo instalar GIT en Windows, MacOS y Linux.",
         url: "https://www.hostinger.es/tutoriales/instalar-git-en-distintos-sistemas-operativos",
         tags: ["init"],
